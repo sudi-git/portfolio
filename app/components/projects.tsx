@@ -1,22 +1,28 @@
+import { link } from "fs";
+import Link from "next/link";
+
 export default function Projects() {
   const projects = [
     {
       title: "Weather App",
       description: "Developed a Weather App as a project for learning purpose. The app shows the weather of particular countries using Python.",
       tech: "Python",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
+      link: "https://github.com/sudi-git/Weather-App"
     },
     {
       title: "Random Quote Generator",
       description: "Developed a quote generator as a project for learning purpose with clean UI and simple interactivity.",
       tech: "HTML, CSS, JavaScript",
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-emerald-500",
+      link: "https://github.com/sudi-git/Random-Quote-Generator"
     },
     {
       title: "Snake Game",
       description: "Classic Snake game built to improve logic and DOM manipulation skills through interactive gameplay.",
       tech: "HTML, CSS, JavaScript",
-      gradient: "from-purple-500 to-pink-500"
+      gradient: "from-purple-500 to-pink-500",
+      link: "https://github.com/sudi-git/Snake-Game"
     }
   ];
 
@@ -46,7 +52,7 @@ export default function Projects() {
                     {project.tech}
                   </span>
                   <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-200">
-                    <span className="text-sm">→</span>
+                    <Link href={project.link} className="text-sm">→</Link>
                   </div>
                 </div>
               </div>
